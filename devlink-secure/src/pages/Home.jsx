@@ -36,11 +36,14 @@ import {
   Building2,
   Zap
 } from 'lucide-react';
+import Logo from '../components/Logo';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
   const [currentView, setCurrentView] = useState('homepage'); // homepage, client-dashboard, freelancer-dashboard
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate()
 
   // Mock data
   const clientProjects = [
@@ -139,10 +142,9 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <FolderOpen className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                    <Logo />
                 </div>
-                <span className="text-xl font-bold text-slate-800">ProjectFlow</span>
               </div>
               
               <div className="hidden md:flex items-center space-x-8">
@@ -152,13 +154,13 @@ export default function Home() {
                   onClick={() => setCurrentView('client-dashboard')}
                   className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
-                  Client Demo
+                  Client
                 </button>
                 <button 
                   onClick={() => setCurrentView('freelancer-dashboard')}
                   className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
-                  Freelancer Demo
+                  Freelancer
                 </button>
                 <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Get Started
@@ -200,7 +202,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-slate-800 mb-3">For Clients & Agencies</h3>
                   <p className="text-slate-600 mb-6">Post projects, manage freelancers, track progress, and get results.</p>
                   <button 
-                    onClick={() => setCurrentView('client-dashboard')}
+                    onClick={() => navigate('/client-dashboard')}
                     className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 flex items-center justify-center group"
                   >
                     View Client Dashboard
@@ -215,7 +217,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-slate-800 mb-3">For Freelancers</h3>
                   <p className="text-slate-600 mb-6">Find projects, manage tasks, track time, and deliver excellence.</p>
                   <button 
-                    onClick={() => setCurrentView('freelancer-dashboard')}
+                    onClick={() => navigate('/seller-dashboard')}
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center justify-center group"
                   >
                     View Freelancer Dashboard
