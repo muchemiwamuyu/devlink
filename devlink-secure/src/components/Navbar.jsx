@@ -9,7 +9,7 @@ function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const navItems = [
-    { name: 'Dashboard', path: '/' },
+    { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
     { name: 'Tasks', path: '/tasks' },
     { name: 'Invoices', path: '/invoices' },
@@ -30,7 +30,7 @@ function Navbar() {
               to={item.path}
               className={({ isActive }) =>
                 isActive
-                  ? 'text-[#00ffff] font-semibold'
+                  ? 'text-white font-semibold'
                   : 'hover:text-teal-300 transition'
               }
             >

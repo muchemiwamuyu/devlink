@@ -49,3 +49,31 @@ export const Fragments = () => {
     </div>
   )
 }
+
+export const AboutContainers = () => {
+  return (
+    <>
+      <div className='grid grid-cols-3 w-full h-60 space-x-3 p-3 bg-[#313030] rounded'> 
+
+        <div className='border-2 border-white rounded'>this is the first div</div>
+        <div className='border-2 border-white rounded'>this is the second div</div>
+        <div className='border-2 border-white rounded'>this is the third div</div>
+      </div>
+    </>
+  )
+}
+
+export const FeaturesContainer = () => {
+  
+  return(
+    <>
+      <div className='w-full flex justify-center space-x-68 p-3 feature-cont'>
+
+        <div className='h-[450px] w-90 bg-red-700'>This is the first div</div>
+        <div className='h-[450px] w-90 bg-blue-700'>This is the second div</div>
+        <div className='h-[450px] w-90 bg-green-700'>This is the third div</div>
+        
+      </div>
+    </>
+  )
+}
