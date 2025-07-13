@@ -180,7 +180,7 @@ export default function Home() {
         </nav>
 
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-20 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
