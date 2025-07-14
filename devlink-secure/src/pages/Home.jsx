@@ -317,7 +317,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Freelancers Choose ProjectPro
+                Why Freelancers Choose <h2>Dev<span>link</span></h2>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Join thousands of successful freelancers who've transformed their business with our platform.
@@ -343,10 +343,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                What Our Users Say
+                What Our Clients Say
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what successful freelancers and agencies say about ProjectPro.
+                Don't just take our word for it. Here's what successful freelancers and agencies say about Devlink.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function Home() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of freelancers who've already streamlined their workflow and grown their business with ProjectPro.
+              Join thousands of freelancers who've already streamlined their workflow and grown their business with Devlink.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
@@ -398,25 +398,24 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-16">
+        <footer className=" py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* Company Info */}
               <div className="md:col-span-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <FolderOpen className="w-5 h-5 text-white" />
+                  <div className="w-8 h-8 rounded-lg ml-[-30px] flex items-center justify-center">
+                    <Logo/>
                   </div>
-                  <span className="ml-2 text-xl font-bold">ProjectPro</span>
                 </div>
-                <p className="text-gray-400 mb-4">
+                <p className="text-gray-600 mb-4">
                   The ultimate project management tool for freelancers and agencies. Streamline your workflow and grow your business.
                 </p>
                 <div className="flex space-x-4">
-                  <Twitter className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                  <Linkedin className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                  <Github className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                  <Facebook className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+                  <Twitter className="w-5 h-5 text-gray-800 hover:text-gray-500 cursor-pointer transition-colors" />
+                  <Linkedin className="w-5 h-5 text-gray-800 hover:text-gray-500 cursor-pointer transition-colors" />
+                  <Github className="w-5 h-5 text-gray-800 hover:text-gray-500 cursor-pointer transition-colors" />
+                  <Facebook className="w-5 h-5 text-gray-800 hover:text-gray-500 cursor-pointer transition-colors" />
                 </div>
               </div>
 
@@ -424,11 +423,11 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Product</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Features</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Pricing</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Integrations</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">API</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Security</a></li>
                 </ul>
               </div>
 
@@ -436,11 +435,11 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Company</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Partners</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">About Us</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Blog</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Careers</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Press</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Partners</a></li>
                 </ul>
               </div>
 
@@ -448,24 +447,24 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Support</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Status</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Community</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Help Center</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Contact Us</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Status</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Community</a></li>
+                  <li><a href="#" className="text-gray-800 hover:text-gray-500 transition-colors">Privacy Policy</a></li>
                 </ul>
               </div>
             </div>
 
             <div className="border-t border-gray-800 mt-12 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-gray-400 text-sm">
-                  © 2025 ProjectPro. All rights reserved.
+                <p className="text-gray-700 text-sm">
+                  © 2025 Devlink. All rights reserved.
                 </p>
                 <div className="flex space-x-6 mt-4 md:mt-0">
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                  <a href="#" className="text-gray-700 hover:text-gray-500 text-sm transition-colors">Terms of Service</a>
+                  <a href="#" className="text-gray-700 hover:text-gray-500 text-sm transition-colors">Privacy Policy</a>
+                  <a href="#" className="text-gray-700 hover:text-gray-500 text-sm transition-colors">Cookie Policy</a>
                 </div>
               </div>
             </div>
