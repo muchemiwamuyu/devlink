@@ -1,73 +1,76 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { FaBars, FaTimes } from 'react-icons/fa'
 import Logo from './Logo'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleMenu = () => setIsOpen(!isOpen)
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Tasks', path: '/tasks' },
-    { name: 'Invoices', path: '/invoices' },
-    { name: 'Reports', path: '/reports' },
-  ]
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   return (
-    <nav className="bg-[#1a1a1a] text-white p-3 shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-        {/* Brand */}
-        <Logo/>
+    <div className='relative'>
+      <nav className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <Logo />
+                </div>
+              </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden bg-[#121417] shadow-md shadow-teal-600 px-3 py-3 md:flex gap-6 rounded">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                isActive
-                  ? 'text-white font-semibold'
-                  : 'hover:text-teal-300 transition'
-              }
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="#features" className="text-slate-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#pricing" className="text-slate-600 hover:text-blue-600 transition-colors">Pricing</a>
+                <button
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
+                >
+                  Client
+                </button>
+                <button
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
+                >
+                  Freelancer
+                </button>
+                <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Get Started
+                </button>
+              </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="text-white md:hidden focus:outline-none text-2xl"
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </div>
+              {/* Mobile menu */}
+              <div className="md:hidden flex items-center justify-end px-4 py-2">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-gray-700 hover:text-blue-600 focus:outline-none"
+                >
+                  {isMenuOpen ? (
+                    <XMarkIcon className="h-6 w-6" />
+                  ) : (
+                    <Bars3Icon className="h-6 w-6" />
+                  )}
+                </button>
+              </div>
 
-      {/* Mobile Dropdown Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-[#222] px-4 py-4 flex flex-col gap-4">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? 'text-teal-400 font-semibold'
-                  : 'text-white hover:text-teal-300 transition'
-              }
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </div>
-      )}
-    </nav>
+              {isMenuOpen && (
+                <div className="md:hidden bg-white border-t border-gray-100">
+                  <div className="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#features" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Features</a>
+                    <a href="#testimonials" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Testimonials</a>
+                    <a href="#pricing" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
+                    <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                    <div className="pt-2 border-t border-gray-100">
+                      <button className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">Sign In</button>
+                      <button className="block w-full text-left px-3 py-2 bg-blue-600 text-white rounded-lg mx-3 mt-2 hover:bg-blue-700">
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            </div>
+          </div>
+        </nav>
+    </div>
   )
 }
 

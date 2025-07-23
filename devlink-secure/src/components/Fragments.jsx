@@ -11,7 +11,7 @@ export const Fragments = () => {
   }))
 
   return (
-    <div className='relative text-white w-[370px] rounded md:w-[1800px] h-[100vh] overflow-hidden bg-black'>
+    <div className='relative text-white w-[370px] rounded h-[100vh] bg-black'>
       <span className='absolute top-4 left-4 z-10'></span>
 
       {/* Glowing Lines */}
