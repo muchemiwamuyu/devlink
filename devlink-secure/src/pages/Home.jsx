@@ -45,6 +45,7 @@ import Logo from '../components/Logo';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials';
+import Header from '../components/Header';
 
 
 const benefits = [
@@ -77,7 +78,7 @@ export default function Home() {
   if (currentView === 'homepage') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <Navbar/>
+        <Header/>
 
         {/* Hero Section */}
         <section className="relative py-20 lg:py-16">
