@@ -46,6 +46,8 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials';
 import Header from '../components/Header';
+import Authentication from '../components/Authentication';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const benefits = [
@@ -74,11 +76,24 @@ const benefits = [
 export default function Home() {
   const navigate = useNavigate()
   const [currentView, setCurrentView] = useState('homepage'); // homepage, client-dashboard, freelancer-dashboard
+  const { isAuthenticated, isLoading } = useAuth0()
+  const [showAuth, setShowAuth] = useState(false)
+
+  const handleClientClick = () => {
+    if (isLoading) return;
+
+    if (isAuthenticated) {
+      navigate('/client-dashboard')
+    } else {
+      setShowAuth(true)
+    }
+  }
+
 
   if (currentView === 'homepage') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <Header/>
+        <Header />
 
         {/* Hero Section */}
         <section className="relative py-20 lg:py-16">
@@ -103,13 +118,27 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-slate-800 mb-3">For Clients & Agencies</h3>
                   <p className="text-slate-600 mb-6">Post projects, manage freelancers, track progress, and get results.</p>
                   <button
-                    onClick={() => navigate('/client-dashboard')}
+                    onClick={handleClientClick}
                     className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 flex items-center justify-center group"
                   >
                     View Client Dashboard
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
+
+                {showAuth && (
+                  <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded-xl w-full max-w-md relative shadow-lg">
+                      <button
+                        onClick={() => setShowAuth(false)}
+                        className="absolute top-2 right-2 text-gray-600 hover:text-black text-lg"
+                      >
+                        ✕
+                      </button>
+                      <Authentication />
+                    </div>
+                  </div>
+                )}
 
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group max-w-sm">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
@@ -250,7 +279,7 @@ export default function Home() {
         </section>
 
         {/* testimonials */}
-        <Testimonials/>
+        <Testimonials />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
@@ -280,7 +309,7 @@ export default function Home() {
               <div className="md:col-span-1">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-lg ml-[-30px] flex items-center justify-center">
-                    <Logo/>
+                    <Logo />
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4">
